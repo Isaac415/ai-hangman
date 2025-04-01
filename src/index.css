@@ -2,6 +2,15 @@
   box-sizing: border-box;
 }
 
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  gap: 100px;
+}
+
 body {
   margin: 0;
   font-family: "Hanken Grotesk", Arial, sans-serif;
@@ -11,7 +20,7 @@ body {
   height: 100vh;
 }
 
-main {
+.game {
   display: flex;
   flex-direction: column;
   align-items: center;
