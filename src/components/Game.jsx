@@ -10,7 +10,7 @@ import Hangman from "./Hangman"
 import RobotThoughts from "./RobotThoughts"
 
 
-export default function AssemblyEndgame(props) {
+export default function Game(props) {
     // State values
     const [currentWord, setCurrentWord] = useState(() => getRandomWord())
     const [guessedLetters, setGuessedLetters] = useState([])

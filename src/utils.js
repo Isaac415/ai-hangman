@@ -77,9 +77,16 @@ export async function getNextGuess(word, guessed) {
     If the current state is "a _ _ l e" and the guessed letters are "a, b, c, l, e":
     - Possible words might be ["apple", "ankle", "axile"] (since "b" and "c" are not in the word).
     - You might guess "p" because it appears in "apple".
+    
+    In your response, provide the JSON object with the following keys:
+    - "full_resonale": at least 300 words on your thinking process. you have to consider the guessed letters and the current state, what words might the correct answer be.
+    - "possible_words": a list of at least 3 possible words.
+    - "reason": roughly 30 words on why you choose this letter, sometimes mention which word you are guessing.
+    - "guess": "p"
 
     Expected JSON output:
-    {
+    { 
+      "full_resonale": "I choosed 'p' because...",
       "possible_words": ["apple", "ankle", "axile"],
       "reason": "I chose 'p' because ...",
       "guess": "p"
