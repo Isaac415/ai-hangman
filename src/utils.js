@@ -1,5 +1,3 @@
-"use server";
-
 import { words } from "./words"
 import OpenAI from "openai";
 

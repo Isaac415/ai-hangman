@@ -27,8 +27,6 @@ export default function AssemblyEndgame(props) {
     const lastGuessedLetter = guessedLetters[guessedLetters.length - 1]
     const isLastGuessIncorrect = lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
 
-    console.log(isGameOver)
-
     useEffect(() => {
         if (props.mode !== "robot" || isGameOver) return;
         
