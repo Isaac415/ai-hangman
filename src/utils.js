@@ -30,7 +30,7 @@ export function getFarewellText(language) {
 export async function getNextGuess(word, guessed) {
     const openai = new OpenAI({
         baseURL: 'https://api.deepseek.com',
-        apiKey: 'sk-3201dc4c7e714f64881fd828e2451c13',
+        apiKey: '',
         dangerouslyAllowBrowser: true
     })
 
