@@ -6,13 +6,12 @@ export default function Header(props) {
                 {
                     props.isGameWon && 
                         <Confetti
-                            recycle={false}
-                            numberOfPieces={1000}
+                            recycle={true}
+                            numberOfPieces={600}
                         />
                 }
-                <h1>Assembly: Endgame</h1>
-                <p>Guess the word within 8 attempts to keep the
-                programming world safe from Assembly!</p>
+                <h1>LLM Plays Hangman</h1>
+                <p>Watch deepseek-chat plays Hangman</p>
         </header>
     )
 }

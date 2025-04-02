@@ -1,21 +1,23 @@
-import { useState } from "react"
-import { languages } from "../languages"
-import { getRandomWord } from "../utils"
+import { useState, useEffect } from "react"
+import { getRandomWord, getNextGuess } from "../utils"
+import clsx from "clsx"
+
 import Header from "./Header"
-import GameStatus from "./GameStatus"
-import LanguageChips from "./LanguageChips"
 import LetterDisplay  from "./LetterDisplay"
 import Keyboard from "./Keyboard"
 import NewGameButton from "./NewGameButton"
+import Hangman from "./Hangman"
+import RobotThoughts from "./RobotThoughts"
 
 
-export default function AssemblyEndgame() {
+export default function AssemblyEndgame(props) {
     // State values
     const [currentWord, setCurrentWord] = useState(() => getRandomWord())
     const [guessedLetters, setGuessedLetters] = useState([])
+    const [guessReason, setGuessReason] = useState("")
 
     // Derived values
-    const numGuessesLeft = languages.length - 1
+    const numGuessesLeft = 7
     const wrongGuessCount =
         guessedLetters.filter(letter => !currentWord.includes(letter)).length
     const isGameWon =
@@ -25,21 +27,34 @@ export default function AssemblyEndgame() {
     const lastGuessedLetter = guessedLetters[guessedLetters.length - 1]
     const isLastGuessIncorrect = lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
 
+    console.log(isGameOver)
+
+    useEffect(() => {
+        if (props.mode !== "robot" || isGameOver) return;
+        
+        async function fetchNextGuess() {
+            let llmResponse = await getNextGuess(currentWord, guessedLetters)
+            let nextGuess = llmResponse.guess
+            setGuessReason(llmResponse.reason)
+            setGuessedLetters(prevLetters =>
+                prevLetters.includes(nextGuess)?
+                    prevLetters :
+                    [...prevLetters, nextGuess]
+            )
+        }
+        
+        fetchNextGuess()
+    }, [guessedLetters, props.mode, currentWord, isGameOver])
+
     return (
-        <section className="game">
+        <section>
+            <section className={clsx({ 'disabled': props.mode === 'robot' }, 'game')}>
             <Header 
                 isGameWon={isGameWon} 
+                languageModel={"deepseek-chat"}
             />
 
-            <GameStatus 
-                isGameOver={isGameOver}
-                isLastGuessIncorrect={isLastGuessIncorrect}
-                wrongGuessCount={wrongGuessCount}
-                isGameWon={isGameWon}
-                isGameLost={isGameLost}
-            />
-
-            <LanguageChips 
+            <Hangman 
                 wrongGuessCount={wrongGuessCount} 
             />
 
@@ -56,10 +71,16 @@ export default function AssemblyEndgame() {
                 setGuessedLetters={setGuessedLetters}
             />
 
+            <RobotThoughts
+                guessReason={guessReason}
+            />
+            </section>
+
             <NewGameButton
                 isGameOver={isGameOver}
                 setCurrentWord={setCurrentWord}
                 setGuessedLetters={setGuessedLetters}
+                setGuessReason={setGuessReason}
             />
         </section>
     )

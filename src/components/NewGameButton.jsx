@@ -4,6 +4,7 @@ export default function NewGameButton(props) {
     function startNewGame() {
         props.setCurrentWord(getRandomWord())
         props.setGuessedLetters([])
+        props.setGuessReason("")
     }
     return (
         <>
