@@ -1,12 +1,46 @@
-# React + Vite
+# AI Hangman
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![AI Hangman Gameplay](./demo.gif)
 
-Currently, two official plugins are available:
+AI Hangman is a web-based game where a language model plays the classic game of Hangman. The game is built using React, providing a fast and interactive experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **AI-Powered Gameplay**: The game utilizes OpenAI's language model to make guesses and provide reasoning for each guess.
+- **Interactive UI**: Built with React, the game offers a dynamic and engaging user interface.
+- **Language Chips**: Visual representation of programming languages, adding a unique twist to the game.
+- **Responsive Design**: Ensures a seamless experience across different devices.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Isaac415/ai-hangman.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd ai-hangman
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+### Running the Game
+
+To start the development server, run:
+
+```bash
+npm run dev
+```
