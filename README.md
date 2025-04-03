@@ -1,6 +1,8 @@
 # AI Hangman
 
-![AI Hangman Gameplay](./demo.gif)
+<div style="text-align: center;">
+  <img src="./demo.gif" alt="LLM Plays Hangman" style="width: 75%;">
+</div>
 
 AI Hangman is a web-based game where a language model plays the classic game of Hangman. The game is built using React, providing a fast and interactive experience.
 
