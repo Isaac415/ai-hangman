@@ -1,10 +1,12 @@
 # LLM Plays Hangman
 
-<div style="display: flex; justify-content: center;">
-  <img src="./demo.gif" alt="LLM Plays Hangman" style="width: 75%; margin: auto;">
-</div>
+<p align="center">
+  <img src="./demo.gif" alt="LLM Plays Hangman" style="width: 75%;">
+</p>
 
-AI Hangman is a web-based game where a language model plays the classic game of Hangman. The game is built using React, providing a fast and interactive experience.
+LLM Plays Hangman is a web-based game where a language model plays the classic game of Hangman. The game is built using React, providing a fast and interactive experience.
+
+See it live: [https://llm-plays-hangman.vercel.app/](https://llm-plays-hangman.vercel.app/)
 
 ## Features
 
