@@ -1,6 +1,6 @@
-# AI Hangman
+# LLM Plays Hangman
 
-<div style="text-align: center;">
+<div style="justify-content: center;">
   <img src="./demo.gif" alt="LLM Plays Hangman" style="width: 75%;">
 </div>
 
